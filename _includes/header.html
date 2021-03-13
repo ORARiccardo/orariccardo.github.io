@@ -1,0 +1,63 @@
+<header class='header'>
+	{% if page.title == "works" %}
+		<nav class="header-{{ include.colorway }} navbar sticky-top navbar-expand-xl navbar-light">
+	{% else %}
+		<nav class="header-{{ include.colorway }} navbar sticky-top navbar-expand-xl navbar-light" id="navBar">
+	{% endif %}	
+		<div class="container-fluid nav-container">
+			<div id="logo">
+		  		<script src="/script/displayLogo.js"></script>
+				<a href="{{ '/' | relative_url }}">
+				<div class="ml11">
+				  <span class="text-wrapper">
+				    <span class="line line1"></span>
+				    <span class="letters">{{ site.title | escape }}</span>
+				  </span>
+				</div>
+				</a>
+			</div>
+			{% if site.pages.size > 0 %}
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <i class="fa fa-folder-open" aria-hidden="true"></i>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			    <div class="navbar-nav ms-auto d-flex flex-column">
+			    	{% if page.title == "home" %}
+			    		<a class="text-nowrap nav-link active text-end" aria-current="page" href="{{ '/' | relative_url }}">about</a>
+			    	{% else %}
+			    		<a class="text-nowrap nav-link text-end" href="{{ '/' | relative_url }}">about</a>
+			    	{% endif %}
+					<div class="ml12 navbar-nav ms-auto">
+						{% if page.title == "works" %}
+					    	<a class="text-nowrap nav-link nav-link-works-top active text-end nav-work" aria-current="page" href="{{ '/works' | relative_url }}">works</a>
+					    {% elsif page.title != "home" %}
+					    	<a class="text-nowrap nav-link nav-link-works-top text-end nav-work" href="{{ '/works' | relative_url }}">works</a>
+					    {% else %}
+					    	<a class="text-nowrap nav-link nav-link-works-top text-end" href="{{ '/works' | relative_url }}">works</a>
+					    {% endif %}
+					    {% for medium in site.medium %}
+					    	{% if page.title == medium.title %}
+					    		<a class="text-nowrap nav-link-show letter nav-link active text-end" aria-current="page" href="{{ medium.permalink | relative_url }}">{{ medium.title}}</a>
+					    	{% elsif page.medium != nil %}
+					    		<a class="text-nowrap nav-link-hide letter nav-link text-end" href="{{ medium.permalink | relative_url }}">{{ medium.title }}</a>
+					    	{% elsif page.title == "works" %}
+					    		<a class="text-nowrap nav-link-show letter nav-link text-end" href="{{ medium.permalink | relative_url }}">{{ medium.title }}</a>
+					    	{% else %}
+					    		<a class="text-nowrap nav-link-hide letter nav-link text-end" href="{{ medium.permalink | relative_url }}">{{ medium.title }}</a>
+					    	{% endif %}
+					    {% endfor %}
+					    {% if page.title == "works" %}
+					    	<a class="text-nowrap nav-link nav-link-works-bottom active text-end nav-work" aria-current="page" href="{{ '/works' | relative_url }}">works</a>
+					    {% elsif page.title != "home" %}
+					    	<a class="text-nowrap nav-link nav-link-works-bottom text-end nav-work" href="{{ '/works' | relative_url }}">works</a>
+					    {% else %}
+					   		<a class="text-nowrap nav-link nav-link-works-bottom text-end" href="{{ '/works' | relative_url }}">works</a>
+					    {% endif %}
+					</div>
+			    </div>
+			  </div>
+			  	<script src="/script/navHover.js"></script>
+			{% endif %}
+		</div>
+	</nav>
+</header>

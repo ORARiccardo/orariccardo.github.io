@@ -1,0 +1,12 @@
+{% if include.ratio != "16x9" %}
+	<div class="ratio" style="--bs-aspect-ratio: {{ include.ratio }}">
+{% else %}
+	<div class="ratio ratio-16x9" >
+{% endif %}
+{% if include.host == "youtube" %}
+		<iframe src="{{ include.src }}&color=white" allowfullscreen>
+{% elsif include.host == "vimeo" %}
+		<iframe src="{{ include.src }}" allowfullscreen>
+{% endif %}
+		</iframe>
+	</div>

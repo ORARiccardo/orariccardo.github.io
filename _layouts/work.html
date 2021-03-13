@@ -1,0 +1,99 @@
+---
+layout: default
+---
+			<div class="works-content">
+				<script src="/script/lazyloading.js"></script>
+				<script src="/script/imageResize.js"></script>
+				{% assign assets = "/assets/portfolio_images/" %}
+				{% assign assets_placeholder = "/assets/portfolio_images/placeholders/" %}
+				{% assign title_slug = page.permalink | split: "/" | last %}
+				{% assign video_assets = "/assets/portfolio_videos/" %}
+				{% assign video_assets_placeholder = "/assets/portfolio_videos/placeholders/" %}
+				<div class="card">
+					<div class="card-body">
+					<div class="card-title work-title">
+						<span>{{ site.data.works[title_slug]['name'] | downcase }}</span>
+						<span>({{ site.data.works[title_slug]['year']['end'] }})</span>
+					</div>
+					<div class="card-subtitle work-medium">{{ site.data.works[title_slug]['description']['medium'] }}</div>
+					{% if site.data.works[title_slug]['description']['concept'] != nil %}
+						<div class="card-text work-concept">{{ site.data.works[title_slug]['description']['concept'] | markdownify | remove: "<p>" | remove: "</p>" }}</div>
+					{% endif %}
+					</div>
+				</div>
+
+				{% assign work_images_array = site.data.works[title_slug]['photos'] %}
+				<div class="work-images row">
+					{% if work_images_array != nil %}				
+						{% for photo in work_images_array %}
+							{% assign preview_fileext = photo | slice: -3, 3 %}
+							{% if preview_fileext == "mp4" %}
+								{% assign poster = photo | split: '.' | first %}
+								{% assign poster = video_assets_placeholder | append: poster | append: ".png" %}
+								{% assign source = video_assets | append: photo %}
+								<div class="col- align-self-center">
+									{% include video-embed.html poster=poster src=source %}
+								</div>
+							{% else %}
+								{% assign source = assets | append: photo %}
+								{% assign placeholder = assets_placeholder | append: photo %}
+								<div class="col- align-self-center">
+									<img src="{{ placeholder }}" data-src="{{ source }}" class="img-fluid lazy" alt="{{ work[1]['name'] }}">
+								</div>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+
+				{% assign work_video = site.data.works[title_slug]['links']['video'] %}
+				{% if work_video != nil %}
+						{% assign work_video_link = work_video['embed-link'] %}
+						{% assign work_video_ratio = work_video['ratio'] %}
+						{% assign work_video_host = work_video['host'] %}
+						<div class="col- align-self-center">
+							{% include youtube-video-embed.html src=work_video_link ratio=work_video_ratio host=work_video_host %}
+						</div>
+				{% endif %}
+				</div>
+
+				{% assign work_demolink = site.data.works[title_slug]['links']['demo'] %}
+				{% if work_demolink != nil %}
+			  		<a class="btn btn-outline-primary work-demolink" href="{{ work_demolink }}" target="_blank" role="button">view live</a>
+				{% endif %}
+
+				{% assign work_bloglink_array = site.data.works[title_slug]['links']['blog'] %}
+				{% if work_bloglink_array != nil %}
+					<div class="card">
+						<div class="card-body">
+							<div class="card-text d-flex">
+						    	<i class="align-self-center bi bi-file-earmark-text"></i>
+								<ul class="work-links">
+								{% for link in work_bloglink_array %}
+									<li>
+										<a class="linkload" href="{{ link }}" target="_blank">Documentation Link</a>
+									</li>
+								{% endfor %}
+								</ul>
+								<script src="/script/createBlogListItem.js"></script>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+
+				{% assign work_externallink_array = site.data.works[title_slug]['links']['external'] %}
+				{% if work_externallink_array != nil %}
+					<div class="card">
+						<div class="card-body">
+							<div class="card-text d-flex">
+						    	<i class="align-self-center bi bi-paperclip"></i>
+								<ul class="work-links">
+								{% for link in work_externallink_array %}
+									<li>
+										<a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a>
+									</li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>

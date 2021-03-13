@@ -1,0 +1,446 @@
+@import "rfs.scss";
+body {
+  overflow-y: scroll;
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0px;
+}
+
+.works {
+	background-color: white;
+}
+
+.home {
+	background-color: blue;
+	color: white;
+}
+
+.header-home {
+	background-color: blue;
+	color: white;
+}
+
+#logo{
+	font-family: 'IBM Plex Mono', monospace;
+}
+
+.works #logo a{
+	color: blue;
+}
+
+.works #logo a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+.home-content {
+	@include font-size(1.2rem);
+}
+
+.home #logo a{
+	color: white;
+}
+
+.home #logo a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.home-content, .works-content{
+	@include rfs(1.5rem, padding-top);
+}
+
+/* unvisited link */
+.home-content a:link {
+    text-decoration: underline;
+	color: white;
+}
+
+/* visited link */
+.home-content a:visited {
+    text-decoration: underline;
+	color: white;
+}
+
+/* mouse over link */
+.home-content a:hover {
+    text-decoration: underline;
+    color: blue;
+    background: white;
+}
+/* selected link */
+.home-content a:active {
+    color: blue;
+    background: white;
+    text-decoration: none;
+}
+
+/* unvisited link */
+.works-content a:link {
+	color: black;
+	text-decoration: none;
+}
+
+/* visited link */
+.works-content a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+/* mouse over link */
+.works-content a:hover {
+    color:gray;
+    text-decoration: none;
+}
+/* selected link */
+.works-content a:active {
+    text-decoration: underline;
+}
+
+/* unvisited link */
+.work-links a:link {
+	text-decoration: underline;
+}
+
+/* visited link */
+.work-links a:visited {
+	text-decoration: underline;
+}
+
+/* mouse over link */
+.work-links a:hover {
+    text-decoration: underline;
+}
+/* selected link */
+.work-links a:active {
+    text-decoration: none;
+}
+
+.card{
+	margin-bottom:1rem;
+	border-bottom: 3px solid;
+	border-right: 3px solid;
+	border-top: 1px solid;
+	border-left: 1px solid;
+	padding: 1rem;
+	word-wrap: break-word;
+	border-radius: 0;
+	width: 100%;
+}
+
+.home .card{
+	background-color: blue!important;
+}
+
+.card-body{
+	padding: 0;
+}
+
+.card-work-image {
+	overflow: hidden;
+}
+
+.card-work-image img{
+	height: auto;
+}
+
+.navbar {
+	padding-top: 1rem;
+	padding-bottom: 0;
+}
+
+.nav-container{
+	padding-right: var(--bs-gutter-x,.75rem);
+	padding-left: var(--bs-gutter-x,.75rem);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* unvisited link */
+.header-home .nav-link:link {
+	color: white;
+}
+
+/* visited link */
+.header-home .nav-link:visited {
+	color: white;
+}
+
+/* mouse over link */
+.header-home .nav-link:hover {
+	color: white!important;
+    text-decoration: underline;
+}
+/* selected link */
+.header-home .nav-link:active {
+	color: white;
+    text-decoration: underline;
+}
+
+.header-home .nav-link.active {
+	color: white!important;
+	text-decoration: underline;
+}
+
+/* unvisited link */
+.header-works .nav-link:link {
+	color: black;
+}
+
+/* visited link */
+.header-works .nav-link:visited {
+	color: black;
+}
+
+/* mouse over link */
+.header-works .nav-link:hover {
+	color: blue!important;
+}
+/* selected link */
+.header-works .nav-link:active {
+	color: blue!important;
+}
+
+.header-works .nav-link.active {
+	color: blue!important;
+}
+
+.header-works .nav-work {
+	text-decoration: underline!important;
+}
+
+.navbar-toggler {
+	border: 0;
+	padding: 0;
+}
+
+.navbar-toggler:focus {
+	box-shadow: none;
+}
+
+.header-home .navbar-toggler {
+	color: white;
+}
+
+.header-works .navbar-toggler {
+	color: black;
+}
+
+.work-concept {
+	margin-top: 1rem;
+}
+
+.work-images img, .work-images video, .work-images .ratio{
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.work-links, .home-link-list {
+	margin-bottom: 0;
+	list-style-type: none;
+  	padding-inline-start: 0px;
+}
+
+
+.work-demolink {
+	width: 100%;
+	margin-bottom: 1rem;
+	border-bottom: 3px solid;
+	border-right: 3px solid;
+	border-top: 1px solid;
+	border-left: 1px solid;
+	border-color: blue;
+	color: blue!important;
+	border-radius: 0;
+	text-decoration: none!important;
+	font-weight: 600;
+}
+
+.work-demolink:hover {
+	background-color: blue;
+	border-color: blue;
+	color: white!important;
+	text-decoration: none!important;
+}
+
+.work-title {
+	font-weight: 600;
+	font-family: 'Major Mono Display';
+	@include font-size(1.3rem);
+}
+
+.footer {
+	font-family: 'Major Mono Display';
+}
+
+video:focus, audio:focus {
+  outline:none;
+}
+
+.footer {
+	@include rfs(1.5rem, margin-top);
+	@include rfs(5rem, margin-bottom);
+}
+
+.home-content i, .works-content i{
+	@include rfs(1rem, margin-right);
+}
+
+/* Hover CSS */
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+/*
+Moving Letters
+https://tobiasahlin.com/moving-letters/#7
+*/
+
+.ml11 {
+  font-weight: 200;
+  @include font-size(3rem);
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 70%;
+  width: 0.6em;
+  background-color: blue;
+  transform-origin: 0 50%;
+  top:20%;
+}
+
+.home .ml11 .line {
+	background-color: white!important;
+}
+
+#index .ml11 .line {
+	background-color: #fff;
+}
+
+.ml11 .line1 {  
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.nav-link-hide {
+	display: none;
+}
+
+
+/* Responsive */
+
+@media (min-width: 1400px){
+	.nav-link-works-top {
+		display: none;
+	}
+	.nav-container{
+	    padding-left: 3rem;
+	    padding-right: 3rem;
+	}
+	.work-images img, .work-images video, .work-images .ratio{
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1399px){
+	.nav-link-works-top {
+		display: none;
+	}
+	.nav-container{
+	    padding-left: 1rem;
+	    padding-right: 1rem;
+	}
+	.work-images img, .work-images video, .work-images .ratio{
+		margin-bottom: 1.5rem;
+	}
+	.ml11 {
+		@include font-size(2.6rem);
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+	.works .ml12 .letter{
+		display: block;
+	}
+	.nav-link-works-bottom {
+		display: none;
+	}
+	.nav-container{
+	    max-width: 960px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	.works .ml12 .letter{
+		display: block;
+	}
+	.nav-link-works-bottom {
+		display: none;
+	}
+	.nav-container{
+	    max-width: 720px;
+	}
+}
+
+@media (max-width: 767px){
+	.works .ml12 .letter{
+		display: block;
+	}
+	.nav-link-works-bottom {
+		display: none;
+	}
+	.nav-container{
+	    max-width: 540px;
+	}
+}
+
+@media (max-width: 575px){
+	.works .ml12 .letter{
+		display: block;
+	}
+	.nav-link-works-bottom {
+		display: none;
+	}
+	.nav-container{
+	    width: 100%;
+	}
+	.home-content, .works-content{
+		padding-top: 1rem;
+	}
+}
+
+@media (max-width: 374px){
+	.home-content {
+		@include font-size(0.9rem);
+	}
+	.home-bio {
+		@include font-size(1rem);	
+	}
+}

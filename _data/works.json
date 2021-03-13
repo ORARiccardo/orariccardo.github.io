@@ -1,0 +1,83 @@
+{
+	"articles-motherboard-italy":
+		{
+			"name": "Articles for Motherboard Italy",
+			"year": {
+				"start": 2016,
+				"end": current
+			},
+			"description": {
+				"medium": "VICE Italy",
+			"concept": "Hacking, surveillance, digital rights, and internet anthropology."
+			},
+			"mediums": [
+				"articles-mb"
+			],
+			"preview": null,
+			"photos":[
+				"screen_motherboard_coluccini.png"
+			],
+			"links":{
+				"video": null,
+				"blog": null,
+				"demo": null,
+				"external":{
+					"Motherboard Italy" : "https://www.vice.com/it/contributor/riccardo-coluccini"
+				}
+			}	
+		},
+	"articles-wired-italy":
+		{
+			"name": "Articles for WIRED Italy",
+			"year": {
+				"start": 2018,
+				"end": current
+			},
+			"description": {
+				"medium": "WIRED Italia",
+				"concept": "EU Regulation, Lawful interception, surveillance."
+			},
+			"mediums": [
+				"articles-wired"
+			],
+			"preview": null,
+			"photos":[
+				"screen_wired_coluccini.png"
+			],
+			"links":{
+				"video": null,
+				"blog": null,
+				"demo": null,
+				"external":{
+					"WIRED Italia" : "https://www.wired.it/author/rcoluccini/"
+				}
+			}	
+		},
+	"articles-irpi-media":
+		{
+			"name": "Articles for Irpimedia",
+			"year": {
+				"start": 2020,
+				"end": current
+			},
+			"description": {
+				"medium": "Irpimedia",
+				"concept": "Migrants surveillance, Lawful Interception, state-sponsored malware."
+			},
+			"mediums": [
+				"articles-irpi"
+			],
+			"preview": null,
+			"photos":[
+				"screen_irpi_coluccini.png"
+			],
+			"links":{
+				"video": null,
+				"blog": null,
+				"demo": null,
+				"external":{
+					"Irpimedia" : "https://irpimedia.irpi.eu/?s=riccardo+coluccini"
+				}
+			}	
+		}
+}

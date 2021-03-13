@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='{{ page.lang | default: site.lang | default: 'en' }}'>
+  {% include head.html %}
+    {% assign colorway = "" %}
+        {% if page.title == "home" %}
+            {% assign colorway = "home" %}
+            <body class="{{ colorway }}">
+        {% else %}
+            {% assign colorway = "works" %}
+            <body class="{{ colorway }}">
+        {% endif %}
+    <div class='layout'>
+        {% include header.html colorway=colorway %}
+          <div class='container'>
+          {{ content }}
+        </div>
+      {% include footer.html %}
+    </div>
+    {% include bootstrap-scripts.html %}
+  </body>
+</html>

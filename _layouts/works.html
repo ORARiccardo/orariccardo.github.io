@@ -1,0 +1,60 @@
+---
+layout: default
+---
+			<script src="/script/lazyloading.js"></script>
+			<script src="/script/clickableCards.js"></script>
+			<script src="/script/sort.js"></script>
+			<div class="works-content">
+					<div class='row'>
+						{% assign assets = "/assets/portfolio_images/" %}
+						{% assign assets_placeholder = "/assets/portfolio_images/placeholders/" %}
+						{% assign video_assets = "/assets/portfolio_videos/" %}
+						{% assign video_assets_placeholder = "/assets/portfolio_videos/placeholders/" %}
+						{% assign works = site.data.works %}
+						{% for work in works %}
+							{% assign display = "false" %}
+							{% if page.medium != nil and work[1]['mediums'] contains page.medium %}
+								{% assign display = "true" %}
+							{% elsif page.title == "works" %}
+								{% assign display = "true" %}
+							{% endif %}
+
+							{% if display == "true" %}
+								<div class='col- d-flex justify-content-center'>
+									<div class="card hvr-grow">
+										{% if work[1]['preview'] != nil %}
+											{% assign preview_fileext = work[1]['preview'] | slice: -3, 3 %}
+											{% if preview_fileext == "mp4" %}
+												{% assign poster = work[1]['preview'] | split: '.' | first %}
+												{% assign poster = video_assets_placeholder | append: poster | append: ".png" %}
+												{% assign source = video_assets | append: work[1]['preview'] %}
+												{% include video-embed.html poster=poster src=source %}
+											{% else %}
+												{% assign source = assets | append: work[1]['preview'] %}
+												{% assign placeholder = assets_placeholder | append: work[1]['preview'] %}
+												<div class="card-work-image ratio ratio-16x9">
+													<img src="{{ placeholder }}" data-src="{{ source }}" class="w-100 lazy" alt="{{ work[1]['name'] }}">
+												</div>
+											{% endif %}
+										{% elsif work[1]['photos'][0] != nil %}
+												{% assign source = assets | append: work[1]['photos'][0] %}
+												{% assign placeholder = assets_placeholder | append: work[1]['photos'][0] %}
+												<div class="card-work-image ratio ratio-16x9">
+													<img src="{{ placeholder }}" data-src="{{ source }}" class="w-100 lazy" alt="{{ work[1]['name'] }}">
+												</div>
+										{% endif %}
+										<div class="card-body mt-2">
+										    <span class="card-title">
+										    	<a class="main-link work-title" href="/works/{{ work[0] }}">
+											    	<span class="">{{ work[1]['name'] | downcase }}</span>
+											   		<span class="year">({{ work[1]['year']['end'] }})</span>
+											   	</a>
+										   	</span>
+										    <div class="card-subtitle fw-light text-wrap">{{ work[1]['description']['medium'] }}</div>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+			</div>
