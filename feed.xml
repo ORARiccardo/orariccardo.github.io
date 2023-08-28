@@ -19,6 +19,16 @@
     <id>urn:uuid:6d8d7f80-ec7f-49ad-8a11-b8b89cd0b141</id>
     <published>2023-02-15T12:00:00Z</published>
     <updated>2023-08-24T12:00:00Z</updated>
+    <summary>Giornalisti uccisi, campagne di delegittimazione, strumenti per insabbiare notizie negative, eserciti di avatar che alimentano finti dibattiti: come si mette il giornalismo sotto attacco</summary>
+  </entry>
+
+  <entry>
+    <title>Gli spyware italiani sul mercato internazionale</title>
+    <link href="https://irpimedia.irpi.eu/sorveglianze-spyware-italiani-mercato-internazionale/"/>
+    <id>urn:uuid:d2f6e9e7-8512-4b95-9cd5-967bd0792595</id>
+    <published>2023-02-08T12:00:00Z</published>
+    <updated>2023-08-28T12:00:00Z</updated>
+    <summary>La spesa pubblica italiana ha creato un mercato nazionale oramai saturo pronto a spingersi all’estero. Ma l’Italia non è pronta per controllarlo.</summary>
   </entry>
 
   <entry>
@@ -26,9 +36,8 @@
     <link href="https://www.example.com/entry2"/>
     <id>urn:uuid:12345678-1234-5678-1234-567812345680</id>
     <published>2023-08-23T12:00:00Z</published>
-    <updated>2023-08-23T12:00:00Z</updated>
-    <summary>Summary of the entry 2.</summary>
-    <content type="html">Full content of the entry 2.</content>
+    <updated>2023-08-23T12:00:00Z</updated>  
+    <summary>prova prova</summary>
   </entry>
 
   <!-- Add more entry elements for additional posts -->
