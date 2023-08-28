@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Articoli Coluccini</title>
+  <subtitle>raccolta dei vari articoli usciti</subtitle>
+  <link href="https://boter.eu/feed" rel="self"/>
+  <link href="https://boter.eu"/>
+  <id>urn:uuid:517732cb-5602-4f20-91e6-f318a39cac39</id>
+  <updated>2023-08-25T00:00:00Z</updated>
+
+  <author>
+    <name>Riccardo Coluccini</name>
+    <email>boter42@protonmail.com</email>
+  </author>
+
+  <entry>
+    <title>L’idra della disinformazione</title>
+    <link href="https://irpimedia.irpi.eu/storykillers-idra-disinformazione/"/>
+    <id>urn:uuid:6d8d7f80-ec7f-49ad-8a11-b8b89cd0b141</id>
+    <published>2023-02-15T12:00:00Z</published>
+    <updated>2023-08-24T12:00:00Z</updated>
+  </entry>
+
+  <entry>
+    <title>Entry Title 2</title>
+    <link href="https://www.example.com/entry2"/>
+    <id>urn:uuid:12345678-1234-5678-1234-567812345680</id>
+    <published>2023-08-23T12:00:00Z</published>
+    <updated>2023-08-23T12:00:00Z</updated>
+    <summary>Summary of the entry 2.</summary>
+    <content type="html">Full content of the entry 2.</content>
+  </entry>
+
+  <!-- Add more entry elements for additional posts -->
+
+</feed>
