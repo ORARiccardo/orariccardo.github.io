@@ -6,12 +6,21 @@
   <link href="https://boter.eu/feed" rel="self"/>
   <link href="https://boter.eu"/>
   <id>urn:uuid:517732cb-5602-4f20-91e6-f318a39cac39</id>
-  <updated>2023-08-25T00:00:00Z</updated>
+  <updated>2023-09-01T00:00:00Z</updated>
 
   <author>
     <name>Riccardo Coluccini</name>
     <email>boter42@protonmail.com</email>
   </author>
+
+  <entry>
+    <title>Droni al fronte</title>
+    <link href="https://irpimedia.irpi.eu/gameofdrones-droni-al-fronte/"/>
+    <id>urn:uuid:eb4da09c-eb5c-4e46-920c-4d12f8f99853</id>
+    <published>2023-09-01T12:00:00Z</published>
+    <updated>2023-09-01T12:00:00Z</updated>  
+    <summary>In Ucraina i velivoli senza pilota sono armi e mezzi di propaganda. Le organizzazioni di volontari in Ucraina hanno cambiato la loro natura per rifornirli all’esercito di Kyiv</summary>
+  </entry>
 
   <entry>
     <title>L’idra della disinformazione</title>
