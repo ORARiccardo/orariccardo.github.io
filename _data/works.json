@@ -1,10 +1,37 @@
 {
+	"articles-irpi-media":
+		{
+			"name": "Articles for Irpimedia",
+			"year": {
+				"start": 2020,
+				"end": current
+			},
+			"description": {
+				"medium": "Irpimedia",
+				"concept": "Spyware & Lawful Interception, State-sponsored hacking, AI & Policing, Migrants surveillance."
+			},
+			"mediums": [
+				"articles-irpi"
+			],
+			"preview": null,
+			"photos":[
+				"screen_irpi_coluccini.png"
+			],
+			"links":{
+				"video": null,
+				"blog": null,
+				"demo": null,
+				"external":{
+					"Irpimedia" : "https://irpimedia.irpi.eu/autore/riccardo-coluccini/"
+				}
+			}	
+		},
 	"articles-motherboard-italy":
 		{
 			"name": "Articles for Motherboard Italy",
 			"year": {
 				"start": 2016,
-				"end": current
+				"end": 2022
 			},
 			"description": {
 				"medium": "VICE Italy",
@@ -50,33 +77,6 @@
 				"demo": null,
 				"external":{
 					"WIRED Italia" : "https://www.wired.it/author/rcoluccini/"
-				}
-			}	
-		},
-	"articles-irpi-media":
-		{
-			"name": "Articles for Irpimedia",
-			"year": {
-				"start": 2020,
-				"end": current
-			},
-			"description": {
-				"medium": "Irpimedia",
-				"concept": "Migrants surveillance, Spyware & Lawful Interception, State-sponsored hacking, AI & Policing."
-			},
-			"mediums": [
-				"articles-irpi"
-			],
-			"preview": null,
-			"photos":[
-				"screen_irpi_coluccini.png"
-			],
-			"links":{
-				"video": null,
-				"blog": null,
-				"demo": null,
-				"external":{
-					"Irpimedia" : "https://irpimedia.irpi.eu/autore/riccardo-coluccini/"
 				}
 			}	
 		}
