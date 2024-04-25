@@ -1,0 +1,19 @@
+---
+layout: posts
+---
+			<script src="/script/lazyloading.js"></script>
+			<script src="/script/clickableCards.js"></script>
+			<div class="home-content">
+			<ul>
+				{% for post in site.posts %}
+				<div class="card">
+					<div class="card-body">
+						<div class="card-text d-flex">
+                                                <i class="align-self-center bi bi-lightning-fill"></i>
+                                                {{ post.content }}
+                                            	</div>
+					</div>
+                                 </div>
+				{% endfor %}
+			</ul>
+			</div>
