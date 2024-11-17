@@ -26,6 +26,33 @@
 				}
 			}	
 		},
+	"articles-lighthouse-reports":
+		{
+			"name": "Articles for Lighthouse Reports",
+			"year": {
+				"start": 2021,
+				"end": current
+			},
+			"description": {
+				"medium": "Lighthouse Reports",
+				"concept": "Spyware, Surveillance, State-sponsored hacking, Disinformation."
+			},
+			"mediums": [
+				"articles-lighthouse-reports"
+			],
+			"preview": null,
+			"photos":[
+				"screen_lighthouse_coluccini.png"
+			],
+			"links":{
+				"video": null,
+				"blog": null,
+				"demo": null,
+				"external":{
+					"Lighthouse" : "https://www.lighthousereports.com/newsroom/surveillance/"
+				}
+			}	
+		},
 	"articles-motherboard-italy":
 		{
 			"name": "Articles for Motherboard Italy",
