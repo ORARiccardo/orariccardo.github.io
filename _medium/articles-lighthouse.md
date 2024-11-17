@@ -1,5 +1,5 @@
 ---
 title: Lighthouse Reports
-medium: lighthouse
+medium: articles-lighthouse-reports
 permalink: /works/articles-lighthouse-reports
 ---
