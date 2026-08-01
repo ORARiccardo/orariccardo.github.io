@@ -1,0 +1,24 @@
+version: 2
+
+# Routine version updates. GitHub's repo-level security updates run separately
+# and are not affected by this file.
+updates:
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # One PR for everything, instead of a PR per gem
+    groups:
+      bundler:
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns:
+          - "*"

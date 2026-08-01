@@ -23,8 +23,8 @@ email: boter42@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:" Add your site description here in the _config.yml file. It will appear in your document head meta (for Google search results) and title of the website (in browser tabs).
   Qui ci si diverte fino al 2022.
 
-baseurl: "/" # the subpath of your site, e.g. /blog. leave blank if this is your main github pages repository
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog. leave blank if this is your main github pages repository
+url: "https://boter.eu" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Build settings
@@ -69,3 +69,20 @@ defaults:
 
 plugins:
   - jekyll-seo-tag
+
+# Anything listed here is kept out of the published site. Setting "exclude" REPLACES
+# Jekyll's defaults, so the defaults are repeated below alongside our own entries.
+exclude:
+  - .bundle
+  - .jekyll-cache
+  - .sass-cache
+  - bin
+  - CLAUDE.md
+  - git_push_guide.txt
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - gemfiles
+  - node_modules
+  - package-lock.json
+  - vendor

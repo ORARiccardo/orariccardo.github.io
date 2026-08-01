@@ -1,0 +1,140 @@
+# Externally published articles, rendered into feed.xml at build time.
+#
+# Add entries with:  bundle exec ruby bin/add-article.rb <url>
+#
+# "id" is what feed readers dedupe on - never change or regenerate an existing
+# one, or every subscriber sees the article again as new.
+# Dates are RFC 3339 strings in UTC; the feed sorts on "published".
+---
+- title: Chi c’è dietro gli “influencer indipendenti” della destra sovranista
+  link: https://irpimedia.irpi.eu/influencer-italiani-destra-sovranista-meloni/
+  id: urn:uuid:1b12ad66-69f4-4acd-8fbc-2be3463e2dd7
+  published: '2026-01-28T12:00:00Z'
+  updated: '2026-01-28T12:00:00Z'
+  summary: La compagna di Tommaso Longobardi, social media manager di Meloni, e l’ex capo ufficio stampa di Luigi Di Maio, Pietro Dettori, sono due dei soci dell’azienda proprietaria di Esperia Italia, media esploso in rete in pochi mesi
+- title: Oppositori politici del Ruanda tra i target di Altamides, il software di First Wap
+  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-tracciati-oppositori-ruanda/
+  id: urn:uuid:89604c1b-358e-4314-b88a-0f7472d1ff2e
+  published: '2025-10-15T12:00:00Z'
+  updated: '2025-10-15T12:00:00Z'
+  summary: Tracciati i numeri di telefono delle persone più vicine a due dei principali leader dell’opposizione in esilio in Sudafrica nel 2012. Il governo di Kigali nega ogni responsabilità, ma è accusato di aver condotto una campagna per eliminare gli oppositori
+- title: Anche un ex manager di Eni tra i bersagli del software che traccia i telefoni
+  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-manager-eni-roberto-casula-bersaglio/
+  id: urn:uuid:fb65e26f-eb6f-42bd-9809-52a4b0e36406
+  published: '2025-10-15T12:00:00Z'
+  updated: '2025-10-15T12:00:00Z'
+  summary: È Roberto Casula, tracciato nell’aprile 2013. Eni aveva dato mandato a investigatori privati che si sono appoggiati ad Altamides, il sistema di First Wap. Che però in Italia può essere utilizzato solo dalla polizia giudiziaria
+- title: La storia di Sophia, una delle diecimila vittime di Altamides
+  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-vittima/
+  id: urn:uuid:191ee428-e32b-42f7-abe4-f93d792c1021
+  published: '2025-10-15T12:00:00Z'
+  updated: '2025-10-15T12:00:00Z'
+  summary: Contattata dai giornalisti, non riusciva a spiegarsi chi ne volesse tracciare i movimenti. Poi ha ricostruito l’incontro con un uomo pakistano che le faceva avances con molta insistenza
+- title: First Wap, la pioniera delle società di sorveglianza di cui non avete mai sentito parlare
+  link: https://irpimedia.irpi.eu/surveillancesecrets/
+  id: urn:uuid:fe66fe3d-40a1-47f8-bc98-b40b3525324d
+  published: '2025-10-14T12:00:00Z'
+  updated: '2025-10-14T12:00:00Z'
+  summary: Dal 2007 sfrutta vulnerabilità della rete telefonica per localizzare telefoni, registrare chiamate e dirottare il traffico internet. Tra le vittime il giornalista Nuzzi e un ex manager Eni. Un archivio segreto svela la rete di attività
+- title: Nel 2012 il giornalista che indagava sul pontificato di Ratzinger è stato spiato
+  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-indagini-vaticano-gianluigi-nuzzi/
+  id: urn:uuid:c2832a74-03ef-47c6-ad7f-95e9d9682fe9
+  published: '2025-10-14T12:00:00Z'
+  updated: '2025-10-14T12:00:00Z'
+  summary: L’attività è cominciata alla pubblicazione del libro di Nuzzi Sua Santità, il 18 maggio, e si è interrotta il giorno dopo l’arresto della sua fonte, la settimana dopo. Le rivelazioni dell’archivio di First Wap
+- title: Come funziona l’industria “mungi-clienti” che ha incassato 240 milioni di euro
+  link: https://irpimedia.irpi.eu/scamempire-truffe-call-center-trading-online/
+  id: urn:uuid:b11ec4fc-1168-414a-97c7-ad91336e0d7d
+  published: '2025-03-05T12:00:00Z'
+  updated: '2025-03-05T12:00:00Z'
+  summary: 'Documenti interni rivelano il funzionamento di una rete di call center tra Israele ed Europa. Gestisce piattaforme di trading online di 79 marchi diversi: una truffa, secondo i clienti. Oltre 26mila le presunte vittime'
+- title: La trasparenza sui prodotti di sorveglianza soppressa dalla Commissione europea
+  link: https://irpimedia.irpi.eu/sorveglianze-trasparenza-prodotti-sorveglianza-soppressa-dalla-commissione-europea/
+  id: urn:uuid:92569869-4975-474c-8bba-9a663519ca07
+  published: '2025-02-24T12:00:00Z'
+  updated: '2025-02-24T12:00:00Z'
+  summary: Nonostante l'evidente aumento di abusi delle tecnologie della sorveglianza a danno di giornalisti e attivisti, in Europa la trasparenza sugli spyware è ancora tabù
+- title: I silenzi della guardia di finanza sui droni impiegati nel Mediterraneo
+  link: https://irpimedia.irpi.eu/sorveglianze-droni-migranti-mediterraneo-guardia-di-finanza/
+  id: urn:uuid:a05ac809-dfd2-4416-9502-423f53700606
+  published: '2025-01-29T12:00:00Z'
+  updated: '2025-01-29T12:00:00Z'
+  summary: 'Sono in grado di decollare verticalmente dalle navi e saranno utilizzati lungo le rotte dei migranti. Non è chiaro in che modo. Quello che sappiamo dall’esempio di Frontex, però, è preoccupante: potrebbero facilitare i respingimenti in Libia e Tunisia'
+- title: Perché in Sicilia gli incendi sono un problema senza soluzione
+  link: https://irpimedia.irpi.eu/incendi-sicilia-problema-senza-soluzione/
+  id: urn:uuid:a3972eac-468b-4aa6-bb77-45a71bbf9a19
+  published: '2024-10-30T12:00:00Z'
+  updated: '2024-10-30T12:00:00Z'
+  summary: Ogni anno vanno in fumo migliaia di ettari, ma le toppe proposte per contrastare i roghi sono insufficienti. Anche la tecnologia fin qui non ha mantenuto le promesse o è stata accantonata. Così i responsabili non vengono quasi mai individuati
+- title: Il Viminale ci tiene all’oscuro su come e quanto usa il sistema di riconoscimento facciale
+  link: https://irpimedia.irpi.eu/sorveglianze-viminale-riconoscimento-facciale-trasparenza/
+  id: urn:uuid:aed6f615-7aab-445f-926e-540c4fa0c2e1
+  published: '2024-07-24T12:00:00Z'
+  updated: '2024-07-24T12:00:00Z'
+  summary: 'Si conosce il numero di ricerche ogni mille reati, di molto maggiore rispetto ad altri Paesi europei. Avere un dibattito pubblico sull’argomento è impossibile: i dati sono incompleti'
+- title: 'Normare gli spyware? In Ue non si garantisce neanche il minimo: la trasparenza'
+  link: https://irpimedia.irpi.eu/sorveglianze-mancanza-regolamento-trasparenza-spyware-europa/
+  id: urn:uuid:e2eb3245-4017-454b-90d6-54384920814e
+  published: '2024-06-17T12:00:00Z'
+  updated: '2024-06-17T12:00:00Z'
+  summary: Le elezioni del nuovo Parlamento europeo danno la maggioranza al PPE. Che si è accontentato sugli spyware di quanto fatto, nonostante le nuove regole siano rimaste solo su carta. E i Paesi non garantiscono trasparenza
+- title: Chi sono gli operatori telefonici sfruttati dall’azienda italiana di sorveglianza Carro
+  link: https://irpimedia.irpi.eu/setelefonando-operatori-telefonici-sorveglianza-geolocalizzazione-carro/
+  id: urn:uuid:3f48fa35-13ea-4f13-83f7-9c183377b7e0
+  published: '2024-05-08T12:00:00Z'
+  updated: '2024-05-08T12:00:00Z'
+  summary: Con il sistema Carro Gwp è possibile ottenere in tempo reale informazioni sulla posizione di un cellulare partendo dal solo numero di telefono. La tecnologia è venduta a governi e agenzie di intelligence
+- title: 'Il buco nella rete telefonica: come una vulnerabilità rende chiunque (potenzialmente) geolocalizzabile'
+  link: https://irpimedia.irpi.eu/setelefonando-reti-telefoniche-telefoni-geolocalizzabili/
+  id: urn:uuid:df3ee0e5-3806-4655-9b44-48c275371491
+  published: '2024-05-03T12:00:00Z'
+  updated: '2024-05-03T12:00:00Z'
+  summary: Nonostante gli addetti ai lavori ne siano al corrente da anni, le vulnerabilità della rete telefonica continuano a non essere mitigate, permettendo ad attori malevoli di geolocalizzare un’utenza telefonica nel mondo
+- title: Un nuovo episodio dello scontro tra Viminale-Garante della privacy
+  link: https://irpimedia.irpi.eu/sorveglianze-craim-riconoscimento-facciale-social-network/
+  id: urn:uuid:92dd31bb-8040-4483-a84d-358f6be7bcd0
+  published: '2024-03-13T12:00:00Z'
+  updated: '2024-03-13T12:00:00Z'
+  summary: Il Craim, un centro tecnologico della polizia, dispone di vari sistemi per aiutare le indagini. Tra le attività che svolge sui social c’è anche il riconoscimento facciale. Il Viminale prima di ogni sperimentazione in materia dovrebbe chiedere un parere al Garante, ma non l’ha fatto
+- title: Come la Russia sta cercando di costruire la propria industria di droni da guerra
+  link: https://irpimedia.irpi.eu/sorveglianze-industria-droni-guerra-russia/
+  id: urn:uuid:c1ae0a26-bd47-4f48-a193-700b63afc059
+  published: '2024-01-19T12:00:00Z'
+  updated: '2024-01-19T12:00:00Z'
+  summary: La fucina di droni russa poggia su Iran, componenti esteri e conoscenze tecniche di aziende passate dal settore agricolo a quello militare
+- title: Quello che la polizia non dice sulle telecamere allo Stadio Olimpico
+  link: https://irpimedia.irpi.eu/sorveglianze-stadio-olimpico-roma-riconoscimento-facciale/
+  id: urn:uuid:edd3ba89-3ef3-4540-9958-df4090a3f80f
+  published: '2023-11-22T12:00:00Z'
+  updated: '2023-11-23T12:00:00Z'
+  summary: In un appalto del 2021, si legge che servono a identificare chi non può entrare nello stadio. La polizia dice invece che servono per identificare chi ha delle condotte violente
+- title: La polizia italiana vuole utilizzare finti profili social per monitorare la rete
+  link: https://irpimedia.irpi.eu/sorveglianze-polizia-finti-social-monitorare-la-rete/
+  id: urn:uuid:447a867e-aec8-4a1a-be71-6eefde920286
+  published: '2023-10-18T12:00:00Z'
+  updated: '2023-10-20T12:00:00Z'
+  summary: Prima erano solamente intelligence ed esercito, ma ora anche le forze dell’ordine guardano con sempre maggiore attenzione alle opportunità della sorveglianza sui social, tramite finti profili indistinguibili dai reali
+- title: Droni al fronte
+  link: https://irpimedia.irpi.eu/gameofdrones-droni-al-fronte/
+  id: urn:uuid:eb4da09c-eb5c-4e46-920c-4d12f8f99853
+  published: '2023-09-01T12:00:00Z'
+  updated: '2023-09-01T12:00:00Z'
+  summary: In Ucraina i velivoli senza pilota sono armi e mezzi di propaganda. Le organizzazioni di volontari in Ucraina hanno cambiato la loro natura per rifornirli all’esercito di Kyiv
+- title: Entry Title 2
+  link: https://www.example.com/entry2
+  id: urn:uuid:12345678-1234-5678-1234-567812345680
+  published: '2023-08-23T12:00:00Z'
+  updated: '2023-08-23T12:00:00Z'
+  summary: prova prova
+- title: L’idra della disinformazione
+  link: https://irpimedia.irpi.eu/storykillers-idra-disinformazione/
+  id: urn:uuid:6d8d7f80-ec7f-49ad-8a11-b8b89cd0b141
+  published: '2023-02-15T12:00:00Z'
+  updated: '2023-08-24T12:00:00Z'
+  summary: 'Giornalisti uccisi, campagne di delegittimazione, strumenti per insabbiare notizie negative, eserciti di avatar che alimentano finti dibattiti: come si mette il giornalismo sotto attacco'
+- title: Gli spyware italiani sul mercato internazionale
+  link: https://irpimedia.irpi.eu/sorveglianze-spyware-italiani-mercato-internazionale/
+  id: urn:uuid:d2f6e9e7-8512-4b95-9cd5-967bd0792595
+  published: '2023-02-08T12:00:00Z'
+  updated: '2023-08-28T12:00:00Z'
+  summary: La spesa pubblica italiana ha creato un mercato nazionale oramai saturo pronto a spingersi all’estero. Ma l’Italia non è pronta per controllarlo.

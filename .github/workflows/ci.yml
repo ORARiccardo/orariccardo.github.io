@@ -1,0 +1,53 @@
+name: CI
+
+# The site itself is built and deployed by GitHub Pages with its own pinned gem
+# set; this workflow builds it from Gemfile.lock instead, so a dependency bump
+# that breaks the build is caught in the PR rather than after merging.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build --trace
+
+      # Uses nokogiri (already in Gemfile.lock) rather than xmllint, which is
+      # not installed on GitHub's runners.
+      - name: Check the feed is well-formed XML
+        run: |
+          bundle exec ruby -rnokogiri -e '
+            feed = Nokogiri::XML(File.read("_site/feed.xml"), &:strict)
+            entries = feed.remove_namespaces!.xpath("//entry").size
+            abort "feed.xml has no entries" if entries.zero?
+            puts "feed.xml is well-formed: #{entries} entries"
+          '
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+          bundler-cache: true
+
+      # Separate job so an advisory is distinguishable from a build failure
+      - name: Audit Gemfile.lock for known vulnerabilities
+        run: bundle exec bundler-audit check --update

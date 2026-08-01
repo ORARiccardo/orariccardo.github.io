@@ -47,7 +47,7 @@ layout: default
 										    <span class="card-title">
 										    	<a class="main-link work-title" href="/works/{{ work[0] }}">
 											    	<span class="">{{ work[1]['name'] | downcase }}</span>
-											   		<span class="year">({{ work[1]['year']['end'] }})</span>
+											   		{% assign work_year = work[1]['year'] %}{% include work-year.html year=work_year %}
 											   	</a>
 										   	</span>
 										    <div class="card-subtitle fw-light text-wrap">{{ work[1]['description']['medium'] }}</div>

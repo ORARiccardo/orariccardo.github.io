@@ -30,3 +30,9 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 gem "webrick", "~> 1.7"
+
+# Local/CI only: checks Gemfile.lock against the Ruby advisory database.
+# GitHub Pages builds the deployed site with its own gems and ignores this file.
+group :development do
+  gem "bundler-audit", "~> 0.9"
+end

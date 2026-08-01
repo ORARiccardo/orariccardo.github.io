@@ -13,7 +13,7 @@ layout: default
 					<div class="card-body">
 					<div class="card-title work-title">
 						<span>{{ site.data.works[title_slug]['name'] | downcase }}</span>
-						<span>({{ site.data.works[title_slug]['year']['end'] }})</span>
+						{% assign work_year = site.data.works[title_slug]['year'] %}{% include work-year.html year=work_year %}
 					</div>
 					<div class="card-subtitle work-medium">{{ site.data.works[title_slug]['description']['medium'] }}</div>
 					{% if site.data.works[title_slug]['description']['concept'] != nil %}
@@ -38,7 +38,7 @@ layout: default
 								{% assign source = assets | append: photo %}
 								{% assign placeholder = assets_placeholder | append: photo %}
 								<div class="col- align-self-center">
-									<img src="{{ placeholder }}" data-src="{{ source }}" class="img-fluid lazy" alt="{{ work[1]['name'] }}">
+									<img src="{{ placeholder }}" data-src="{{ source }}" class="img-fluid lazy" alt="{{ site.data.works[title_slug]['name'] }}">
 								</div>
 							{% endif %}
 						{% endfor %}
