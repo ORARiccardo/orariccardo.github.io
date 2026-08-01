@@ -1,0 +1,99 @@
+name: Syndicate new posts
+
+# Turns each new _posts/*.md entry into a thread on Bluesky, Mastodon and
+# Twitter/X. A platform whose secrets are absent is skipped, so this is useful
+# with one account configured or with all three.
+#
+# Required secrets (per platform, all optional):
+#   BLUESKY_HANDLE, BLUESKY_APP_PASSWORD
+#   MASTODON_INSTANCE, MASTODON_TOKEN
+#   TWITTER_API_KEY, TWITTER_API_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_posts/**"
+  workflow_dispatch:
+    inputs:
+      post:
+        description: "Path to a single post (default: everything added in the last push)"
+        required: false
+        type: string
+      dry_run:
+        description: "Print the thread instead of posting it"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+# Never let two runs post the same thread twice
+concurrency:
+  group: syndicate
+  cancel-in-progress: false
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+          # The script is stdlib-only; no bundle needed
+          bundler-cache: false
+
+      - name: Syndicate
+        env:
+          # Passed as env rather than interpolated into the shell, so a crafted
+          # input cannot become part of the command
+          INPUT_POST: ${{ inputs.post }}
+          INPUT_DRY_RUN: ${{ inputs.dry_run }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: |
+          set -euo pipefail
+
+          args=()
+          if [ -n "${INPUT_POST:-}" ]; then
+            args+=(--post "$INPUT_POST")
+          else
+            before="${PUSH_BEFORE:-}"
+            # First push to a branch, or a force push, reports an all-zero SHA
+            if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ]; then
+              before="HEAD~1"
+            fi
+            args+=(--since "$before")
+          fi
+
+          if [ "${INPUT_DRY_RUN:-false}" = "true" ]; then
+            args+=(--dry-run)
+          fi
+
+          ruby bin/syndicate.rb "${args[@]}"
+
+      - name: Record what was syndicated
+        if: ${{ !cancelled() && inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- .github/syndicated.yml; then
+            echo "nothing new to record"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/syndicated.yml
+          # Only touches .github/, so it cannot re-trigger this workflow
+          git commit -m "syndicate: record posted entries"
+          git push

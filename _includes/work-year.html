@@ -1,0 +1,9 @@
+{%- comment -%}
+	Renders a work's year label. Pass the work's "year" hash as the "year" param
+	(assign it to a variable first: Jekyll's include tag rejects bracket lookups).
+	  end == "current" -> (current)   |   start != end -> (start-end)   |   else -> (end)
+	The "year" class is required: script/sort.js orders the works grid by this text.
+{%- endcomment -%}
+{%- assign year_start = include.year['start'] -%}
+{%- assign year_end = include.year['end'] -%}
+<span class="year">({% if year_end == "current" %}current{% elsif year_start != year_end %}{{ year_start }}-{{ year_end }}{% else %}{{ year_end }}{% endif %})</span>

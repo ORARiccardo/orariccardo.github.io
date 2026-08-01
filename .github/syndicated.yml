@@ -1,0 +1,13 @@
+# Posts already syndicated, written by .github/workflows/syndicate.yml.
+# Delete an entry only if you genuinely want it posted to that platform again.
+#
+# The two posts below predate the automation and are marked as done so it never
+# retroactively floods your followers with them.
+"_posts/2024-04-25-beg.md":
+  bluesky: predates automation
+  mastodon: predates automation
+  twitter: predates automation
+"_posts/2024-11-17-ritento.md":
+  bluesky: predates automation
+  mastodon: predates automation
+  twitter: predates automation

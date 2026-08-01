@@ -4,7 +4,7 @@
 			"name": "Articles for Irpimedia",
 			"year": {
 				"start": 2020,
-				"end": current
+				"end": 2026
 			},
 			"description": {
 				"medium": "Irpimedia",
@@ -85,7 +85,7 @@
 			"name": "Articles for WIRED Italy",
 			"year": {
 				"start": 2018,
-				"end": current
+				"end": 2025
 			},
 			"description": {
 				"medium": "WIRED Italia",
