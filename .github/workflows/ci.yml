@@ -27,8 +27,16 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --trace
 
+      # Uses nokogiri (already in Gemfile.lock) rather than xmllint, which is
+      # not installed on GitHub's runners.
       - name: Check the feed is well-formed XML
-        run: xmllint --noout _site/feed.xml
+        run: |
+          bundle exec ruby -rnokogiri -e '
+            feed = Nokogiri::XML(File.read("_site/feed.xml"), &:strict)
+            entries = feed.remove_namespaces!.xpath("//entry").size
+            abort "feed.xml has no entries" if entries.zero?
+            puts "feed.xml is well-formed: #{entries} entries"
+          '
 
   audit:
     runs-on: ubuntu-latest
