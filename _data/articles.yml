@@ -6,12 +6,24 @@
 # one, or every subscriber sees the article again as new.
 # Dates are RFC 3339 strings in UTC; the feed sorts on "published".
 ---
+- title: Data Centre Silence
+  link: https://www.lighthousereports.com/investigation/data-centre-silence/
+  id: urn:uuid:f1ddfd94-ddb6-403b-8768-618b9f99b8a0
+  published: '2026-09-29T22:00:00Z'
+  updated: '2026-09-29T22:00:00Z'
+  summary: How EU leaders sided with Big Tech over the public’s right to know about the true scale and environmental impact of the AI build-out, forcing a legal challenge to seek disclosure
 - title: Chi c’è dietro gli “influencer indipendenti” della destra sovranista
   link: https://irpimedia.irpi.eu/influencer-italiani-destra-sovranista-meloni/
   id: urn:uuid:1b12ad66-69f4-4acd-8fbc-2be3463e2dd7
   published: '2026-01-28T12:00:00Z'
   updated: '2026-01-28T12:00:00Z'
   summary: La compagna di Tommaso Longobardi, social media manager di Meloni, e l’ex capo ufficio stampa di Luigi Di Maio, Pietro Dettori, sono due dei soci dell’azienda proprietaria di Esperia Italia, media esploso in rete in pochi mesi
+- title: La storia di Sophia, una delle diecimila vittime di Altamides
+  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-vittima/
+  id: urn:uuid:191ee428-e32b-42f7-abe4-f93d792c1021
+  published: '2025-10-15T12:00:00Z'
+  updated: '2025-10-15T12:00:00Z'
+  summary: Contattata dai giornalisti, non riusciva a spiegarsi chi ne volesse tracciare i movimenti. Poi ha ricostruito l’incontro con un uomo pakistano che le faceva avances con molta insistenza
 - title: Oppositori politici del Ruanda tra i target di Altamides, il software di First Wap
   link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-tracciati-oppositori-ruanda/
   id: urn:uuid:89604c1b-358e-4314-b88a-0f7472d1ff2e
@@ -24,24 +36,18 @@
   published: '2025-10-15T12:00:00Z'
   updated: '2025-10-15T12:00:00Z'
   summary: È Roberto Casula, tracciato nell’aprile 2013. Eni aveva dato mandato a investigatori privati che si sono appoggiati ad Altamides, il sistema di First Wap. Che però in Italia può essere utilizzato solo dalla polizia giudiziaria
-- title: La storia di Sophia, una delle diecimila vittime di Altamides
-  link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-vittima/
-  id: urn:uuid:191ee428-e32b-42f7-abe4-f93d792c1021
-  published: '2025-10-15T12:00:00Z'
-  updated: '2025-10-15T12:00:00Z'
-  summary: Contattata dai giornalisti, non riusciva a spiegarsi chi ne volesse tracciare i movimenti. Poi ha ricostruito l’incontro con un uomo pakistano che le faceva avances con molta insistenza
-- title: First Wap, la pioniera delle società di sorveglianza di cui non avete mai sentito parlare
-  link: https://irpimedia.irpi.eu/surveillancesecrets/
-  id: urn:uuid:fe66fe3d-40a1-47f8-bc98-b40b3525324d
-  published: '2025-10-14T12:00:00Z'
-  updated: '2025-10-14T12:00:00Z'
-  summary: Dal 2007 sfrutta vulnerabilità della rete telefonica per localizzare telefoni, registrare chiamate e dirottare il traffico internet. Tra le vittime il giornalista Nuzzi e un ex manager Eni. Un archivio segreto svela la rete di attività
 - title: Nel 2012 il giornalista che indagava sul pontificato di Ratzinger è stato spiato
   link: https://irpimedia.irpi.eu/surveillancesecrets-first-wap-indagini-vaticano-gianluigi-nuzzi/
   id: urn:uuid:c2832a74-03ef-47c6-ad7f-95e9d9682fe9
   published: '2025-10-14T12:00:00Z'
   updated: '2025-10-14T12:00:00Z'
   summary: L’attività è cominciata alla pubblicazione del libro di Nuzzi Sua Santità, il 18 maggio, e si è interrotta il giorno dopo l’arresto della sua fonte, la settimana dopo. Le rivelazioni dell’archivio di First Wap
+- title: First Wap, la pioniera delle società di sorveglianza di cui non avete mai sentito parlare
+  link: https://irpimedia.irpi.eu/surveillancesecrets/
+  id: urn:uuid:fe66fe3d-40a1-47f8-bc98-b40b3525324d
+  published: '2025-10-14T12:00:00Z'
+  updated: '2025-10-14T12:00:00Z'
+  summary: Dal 2007 sfrutta vulnerabilità della rete telefonica per localizzare telefoni, registrare chiamate e dirottare il traffico internet. Tra le vittime il giornalista Nuzzi e un ex manager Eni. Un archivio segreto svela la rete di attività
 - title: Come funziona l’industria “mungi-clienti” che ha incassato 240 milioni di euro
   link: https://irpimedia.irpi.eu/scamempire-truffe-call-center-trading-online/
   id: urn:uuid:b11ec4fc-1168-414a-97c7-ad91336e0d7d
