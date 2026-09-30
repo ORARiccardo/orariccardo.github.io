@@ -1,8 +1,8 @@
 name: CI
 
-# The site itself is built and deployed by GitHub Pages with its own pinned gem
-# set; this workflow builds it from Gemfile.lock instead, so a dependency bump
-# that breaks the build is caught in the PR rather than after merging.
+# Builds the site from Gemfile.lock the same way pages.yml deploys it, so a
+# dependency bump that breaks the build is caught in the PR rather than after
+# merging.
 
 on:
   push:
