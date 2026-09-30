@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Personal portfolio site of a freelance journalist (boter.eu), built with Jekyll and deployed by GitHub Pages from the default branch of `ORARiccardo/orariccardo.github.io` (see `CNAME`). Pushing to `main` is the deploy: GitHub Pages builds the site itself, with its own pinned gem set, **ignoring this repo's `Gemfile.lock`**. The CI workflow in `.github/workflows/ci.yml` builds from the lockfile on every PR, so it protects local/CI reproducibility and catches breaking dependency bumps — it does not produce the deployed site. No tests exist.
+Personal portfolio site of a freelance journalist (boter.eu), built with Jekyll 4 and deployed to GitHub Pages from `ORARiccardo/orariccardo.github.io`. Pushing to `main` is the deploy: `.github/workflows/pages.yml` builds the site from **this repo's `Gemfile.lock`** and publishes it with `actions/deploy-pages` (the repo's Pages source is set to "GitHub Actions"; the custom domain lives in the Pages settings, `CNAME` is kept for reference). `.github/workflows/ci.yml` runs the same build on every PR, plus a feed check and `bundler-audit`, so a breaking dependency bump fails before it is merged. No tests exist.
+
+The site deliberately does **not** use the `github-pages` gem. That gem pins `jekyll-remote-theme` 0.4.3, which caps `rubyzip` below 3.0, so security fixes in `rubyzip` could never be applied and Dependabot security updates failed. Don't reintroduce it, or `remote_theme:`.
 
 ## Commands
 
@@ -16,13 +18,13 @@ bundle exec bundler-audit check --update   # CVE check against Gemfile.lock
 bundle exec ruby bin/add-article.rb <url>  # add an article to the feed (see below)
 ```
 
-**Requires Ruby < 4.0**, pinned to 3.2.6 by `.ruby-version`. The `github-pages` gem pulls in `commonmarker`, which caps at Ruby < 4.0, so `bundle install` fails outright on Ruby 4.x with a version-solving error. If your shell defaults to a newer Ruby, select it explicitly (e.g. `export RBENV_VERSION=3.2.6`).
+Ruby is pinned to 3.2.6 by `.ruby-version`, and both workflows read it. If your shell defaults to a different Ruby, select it explicitly (e.g. `export RBENV_VERSION=3.2.6`).
 
 `_config.yml` is not reloaded by `serve` — restart the process after editing it.
 
-Two config gotchas: Jekyll renders **any** Markdown file at the repo root into the published site (that is why `CLAUDE.md` is in `exclude`), and setting `exclude` **replaces** Jekyll's default exclusions rather than extending them, so the defaults are repeated there by hand — keep them when adding entries.
+Two config gotchas: a Markdown file without front matter (such as `CLAUDE.md` or `README.md`) is copied into the published site verbatim, as a static file (that is why both are in `exclude`), and setting `exclude` **replaces** Jekyll's default exclusions rather than extending them, so the defaults are repeated there by hand — keep them when adding entries.
 
-The gem set is pinned by the `github-pages` gem (Jekyll 3.10) so local builds match GitHub Pages. `.github/dependabot.yml` opens grouped weekly bundler PRs (on top of GitHub's repo-level security updates), and `Gemfile.lock` carries gem checksums — regenerate them with `bundle lock --add-checksums` if the section is ever lost.
+`.github/dependabot.yml` opens grouped weekly bundler and Actions PRs (on top of GitHub's repo-level security updates). `Gemfile.lock` lists only the platforms that build the site (`arm64-darwin`, `x86_64-linux`); add one with `bundle lock --add-platform` if you build elsewhere. It also carries gem checksums — regenerate them with `bundle lock --add-checksums` if the section is ever lost. `nokogiri` is a development-only gem, used by `bin/add-article.rb` and CI's feed check, not by the build.
 
 ## Content model
 
@@ -45,13 +47,13 @@ The include must keep emitting `class="year"`: `script/sort.js` orders the grid 
 
 ### Medium and work permalinks collide
 
-The committed `_medium/*.md` files point their permalinks at a work page (e.g. `_medium/articles-irpi.md` → `/works/articles-irpi-media`), the same permalink as `_work/articles-irpi-media.md`. One output silently overwrites the other with no build warning — the work detail page wins, so nav "medium" links land on the work page rather than a filtered grid. That is harmless while there is exactly one work per medium; if a medium gains a second work, give the medium pages their own permalinks (`/works/<medium>`, as the generator script produces) or the filtered grid stays unreachable.
+The committed `_medium/*.md` files point their permalinks at a work page (e.g. `_medium/articles-irpi.md` → `/works/articles-irpi-media`), the same permalink as `_work/articles-irpi-media.md`. One output overwrites the other — Jekyll prints a "Conflict: The following destination is shared by multiple files" warning for each, which is expected — and the work detail page wins, so nav "medium" links land on the work page rather than a filtered grid. That is harmless while there is exactly one work per medium; if a medium gains a second work, give the medium pages their own permalinks (`/works/<medium>`, as the generator script produces) or the filtered grid stays unreachable.
 
 ## Layouts and theming
 
-`remote_theme: jirrian/jekyll-theme-image-grid` supplies `assets/style.css` and the `post` layout; everything else is overridden locally. `_layouts/default.html` (and its near-duplicate `posts.html`, which exists only to give the activity feed the "home" colorway) branch on `page.title` to set a body class of `home` (blue) vs `works` (white) — this "colorway" is passed into `_includes/header.html`, and much of `_sass/jzhong_style.scss` is scoped under `.home` / `.works`. Adding a page means deciding which colorway it gets.
+The `jekyll-theme-image-grid` gem (`theme:` in `_config.yml`) supplies `assets/style.css` and the `post` layout; everything else is overridden locally. `ignore_theme_config: true` stops Jekyll merging the theme's demo `_config.yml` into ours — without it pages gain `author: "author"` meta tags, and posts gain a title/date header. `_layouts/default.html` (and its near-duplicate `posts.html`, which exists only to give the activity feed the "home" colorway) branch on `page.title` to set a body class of `home` (blue) vs `works` (white) — this "colorway" is passed into `_includes/header.html`, and much of `_sass/jzhong.scss` is scoped under `.home` / `.works`. Adding a page means deciding which colorway it gets.
 
-Styling entry point is `assets/jzhong_style.scss` (empty front matter triggers Sass compilation), which imports `_sass/jzhong_style.scss` and the vendored `_sass/rfs.scss` (from the npm `rfs` package — `package-lock.json` exists only to pin it; there is no npm build step). Bootstrap 5 beta and Bootstrap Icons load from CDNs in `_includes/bootstrap-style.html` / `head.html`.
+Styling entry point is `assets/jzhong_style.scss` (empty front matter triggers Sass compilation), which imports `_sass/jzhong.scss` and the vendored `_sass/rfs.scss`. Sass is Dart Sass (`sass-embedded`), which resolves `@import` relative to the importing file before `_sass/`: a partial named like its importer (`jzhong_style`) makes the entry file import itself and fails the build, so keep the names distinct. The deprecation warnings it prints (`@import`, `slash-div`, … mostly from the vendored `rfs.scss`) are harmless until Dart Sass 3.0. (from the npm `rfs` package — `package-lock.json` exists only to pin it; there is no npm build step). Bootstrap 5 beta and Bootstrap Icons load from CDNs in `_includes/bootstrap-style.html` / `head.html`.
 
 ## Front-end scripts
 

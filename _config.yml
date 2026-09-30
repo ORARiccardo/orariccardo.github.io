@@ -28,7 +28,10 @@ url: "https://boter.eu" # the base hostname & protocol for your site, e.g. http:
 
 
 # Build settings
-remote_theme: jirrian/jekyll-theme-image-grid@main
+theme: jekyll-theme-image-grid
+# The theme gem ships a demo _config.yml (author: "author", post title/date on,
+# placeholder social links) that Jekyll would merge into this one. Skip it.
+ignore_theme_config: true
 
 # generate social links in footer
 social_links:
