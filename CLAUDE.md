@@ -18,7 +18,7 @@ bundle exec bundler-audit check --update   # CVE check against Gemfile.lock
 bundle exec ruby bin/add-article.rb <url>  # add an article to the feed (see below)
 ```
 
-Ruby is pinned to 3.2.6 by `.ruby-version`, and both workflows read it. If your shell defaults to a different Ruby, select it explicitly (e.g. `export RBENV_VERSION=3.2.6`).
+Ruby is pinned to 3.2.11 by `.ruby-version`, and both workflows read it. If your shell defaults to a different Ruby, select it explicitly (e.g. `export RBENV_VERSION=3.2.11`).
 
 `_config.yml` is not reloaded by `serve` — restart the process after editing it.
 
