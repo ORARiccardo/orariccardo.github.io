@@ -31,5 +31,5 @@ group :development do
   # Checks Gemfile.lock against the Ruby advisory database
   gem "bundler-audit", "~> 0.9"
   # Parses article pages in bin/add-article.rb and validates feed.xml in CI
-  gem "nokogiri", "~> 1.18"
+  gem "nokogiri", "~> 1.19"
 end
